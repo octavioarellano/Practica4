@@ -1,0 +1,173 @@
+:root {
+    --fondo: #d9d5c8;
+    --papel: #f6f3ea;
+    --renglon: #cfd8e3;
+    --margen: #b9a3a3;
+    --texto: #2a2a2a;
+    --suave: #6b6b6b;
+    --borde: #3a3a3a;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --fondo: #111;
+        --papel: #1e1e1e;
+        --renglon: #2a2f36;
+        --margen: #5a4444;
+        --texto: #e4e4e4;
+        --suave: #9a9a9a;
+        --borde: #cfcfcf;
+    }
+}
+
+:root[data-theme="dark"] {
+    --fondo: #111;
+    --papel: #1e1e1e;
+    --renglon: #2a2f36;
+    --margen: #5a4444;
+    --texto: #e4e4e4;
+    --suave: #9a9a9a;
+    --borde: #cfcfcf;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font: 20px/32px "Patrick Hand", "Comic Sans MS", "Bradley Hand", cursive;
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 18px 12px 40px;
+}
+
+.hoja {
+    background: var(--papel);
+    background-image: repeating-linear-gradient(transparent 0 31px, var(--renglon) 31px 32px);
+    border: 2px solid var(--borde);
+    border-radius: 3px 9px 4px 7px;
+    padding: 20px 22px 24px 54px;
+    position: relative;
+    box-shadow: 4px 5px 0 rgba(0, 0, 0, .25);
+}
+
+.hoja::before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--margen);
+}
+
+h1 {
+    font-size: 38px;
+    line-height: 40px;
+    margin: 0 0 8px;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 0 0 8px;
+    text-decoration: underline wavy;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+}
+
+p {
+    margin: 0 0 32px;
+}
+
+.suave {
+    color: var(--suave);
+    font-size: 17px;
+    line-height: 26px;
+}
+
+.dibujo {
+    float: right;
+    width: 130px;
+    margin: 0 0 6px 12px;
+    color: var(--texto);
+}
+
+.nota {
+    clear: both;
+    border: 2px dashed var(--borde);
+    padding: 6px 12px;
+    margin: 0 0 32px;
+    font-size: 17px;
+    line-height: 26px;
+    transform: rotate(-.6deg);
+    background: var(--papel);
+}
+
+.nota b {
+    text-decoration: underline;
+}
+
+button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    color: var(--texto);
+    background: transparent;
+    border: 2px solid var(--borde);
+    border-radius: 6px 12px 5px 10px;
+    padding: 4px 14px;
+    margin: 0 0 12px;
+    cursor: pointer;
+    line-height: 26px;
+}
+
+button:hover,
+button:focus-visible {
+    background: var(--texto);
+    color: var(--papel);
+    outline: none;
+}
+
+.barra {
+    height: 14px;
+    border: 2px solid var(--borde);
+    border-radius: 6px;
+    margin: 2px 0 14px;
+}
+
+.barra i {
+    display: block;
+    height: 100%;
+    background: var(--texto);
+    opacity: .75;
+}
+
+.linea-stat {
+    margin: 0 0 10px;
+    line-height: 26px;
+}
+
+ul {
+    margin: 0 0 32px;
+    padding-left: 22px;
+    line-height: 26px;
+}
+
+li {
+    margin-bottom: 6px;
+}
